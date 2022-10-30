@@ -1,0 +1,27 @@
+/* .leftside, .rightside {		
+	
+} */
+
+/* .leftside{
+	
+	
+	height:1%;
+	width:100%;	
+} */
+
+ .rightside{
+	background:silver;	
+	height:97%;
+	width:100%;
+} 
+
+img {
+  width: 100%;
+  height: 70vh; }
+
+figure {
+  margin: 0;
+  margin-bottom: 50px;
+  text-align: center;
+  height: 2%; 
+  }

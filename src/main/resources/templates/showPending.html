@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>showpending</title>
+
+<link rel="stylesheet" href="/table/form.css">
+
+</head>
+<body>
+
+	<div th:insert="header.html"></div>
+
+	<div class="container tbl-container">
+		<div class="row tbl-fixed ">
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Product Type</th>
+						<th>PackagingType</th>
+						<th>Quantity</th>
+						<th>Weight</th>
+						<th>ProductValue</th>
+						<th>FullName</th>
+						<th>Email</th>
+						<th>PickupCity</th>
+						<th>Contact</th>
+						<th>PickupDatetime</th>
+						<th>DropoffCity</th>
+						<th>DropoffCountry</th>
+					</tr>
+
+				</thead>
+
+
+				<tbody>
+					<tr th:each=" gotit :${pList}">
+
+						<td>[[${gotit.productType}]]</td>
+						<td>[[${gotit.packagingType}]]</td>
+						<td>[[${gotit.quantity}]]</td>
+						<td>[[${gotit.weight}]]</td>
+						<td>[[${gotit.productValue}]]</td>
+						<td>[[${gotit.fullName}]]</td>
+						<td>[[${gotit.email}]]</td>
+						<td>[[${gotit.pickupCity}]]</td>
+						<td>[[${gotit.contact}]]</td>
+						<td>[[${gotit.pickupDatetime}]]</td>
+						<td>[[${gotit.dropoffCity}]]</td>
+						<td>[[${gotit.dropoffCity}]]</td>
+						
+						<td> <a th:href="@{/success(id=${gotit.id})}"> <input
+								class="btn btn-success" type="submit" value="Success"></a></td>
+
+					</tr>
+
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+
+
+	<!-- 
+<script type="text/javascript" >
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        } );
+    </script>
+     -->
+
+</body>
+</html>

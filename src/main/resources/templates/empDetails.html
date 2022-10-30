@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>emp/details</title>
+<!-- // linking css  -->
+<link rel="stylesheet" href="/table/form.css">
+
+</head>
+<body>
+	<div th:insert="header.html"></div>
+
+	<div class="container tbl-container">
+		<div class="row tbl-fixed ">
+			<table class="content-table">
+				<thead>
+					<tr>
+						<td>FirstName</td>
+						<td>LastName</td>
+						<td>Password</td>
+						<td>Gender</td>
+						<td>Email</td>
+						<td>DOB</td>
+						<td>Country</td>
+						<td>Post</td>
+						<td>Salary</td>
+						<td>Age</td>
+					</tr>
+
+				</thead>
+
+
+				<tbody>
+					<tr th:each="emp :${empDtl}">
+						<td th:if ="${emp.fname} == 'n'"> [[${emp.fname}]]</td>
+						<td>[[${emp.lname}]]</td>
+						<td>[[${emp.password}]]</td>
+						<td>[[${emp.gender}]]</td>
+						<td>[[${emp.email}]]</td>
+						<td>[[${emp.dob}]]</td>
+						<td>[[${emp.post}]]</td>
+						<td>[[${emp.salary}]]</td>
+						<td>[[${emp.age}]]</td>
+						<!-- <td>					
+			   	 <a th:href="@{/edit(id=${emp.id})}"> <input class= "btn btn-success" type="submit" value="Edit"> </a>
+				 <a th:href="@{/delete(id=${emp.id})}"> <input class= "btn btn-danger" type="submit" value="Delete"></a>
+				 </td> -->
+
+
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+		</div>
+		
+</body>
+</html>

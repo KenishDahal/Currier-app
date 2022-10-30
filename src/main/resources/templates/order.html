@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>order</title>
+
+<link rel="stylesheet" href="/table/form.css">
+</head>
+
+<body>
+<div th:insert="header.html"></div>
+
+	<div class="container tbl-container">
+<div class="row tbl-fixed " >
+		<table class="content-table">
+			<thead>
+				<tr>
+					<th>Product Type</th>
+					<th>PackagingType</th>
+					<th>Quantity</th>
+					<th>Weight</th>
+					<th>ProductValue</th>
+					<th>FullName</th>
+					<th>Email</th>
+					<th>PickupCity</th>
+					<th>Contact</th>
+					<th>PickupDatetime</th>
+					<th>DropoffCity</th>
+					<th>DropoffCountry</th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+				<tr th:each="od :${orderList}">
+
+					<td>[[${od.productType}]]</td>
+					<td>[[${od.packagingType}]]</td>
+					<td>[[${od.quantity}]]</td>
+					<td>[[${od.weight}]]</td>
+					<td>[[${od.productValue}]]</td>
+					<td>[[${od.fullName}]]</td>
+					<td>[[${od.email}]]</td>
+					<td>[[${od.pickupCity}]]</td>
+					<td>[[${od.contact}]]</td>
+					<td>[[${od.pickupDatetime}]]</td>
+					<td>[[${od.dropoffCity}]]</td>
+					<td>[[${od.dropoffCity}]]</td>
+					<td><a th:href="@{/add (id=${od.id})}"> <input
+							class="btn btn-success" type="submit" value="Add">
+					</a> <!-- <a th:href="@{/edit(id=${od.id})}"> <input
+							class="btn btn-success" type="submit" value="Edit">
+					</a> --> <a th:href="@{/delete(id=${od.id})}"> <input
+							class="btn btn-danger" type="submit" value="Delete"></a></td>
+
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+	</div>
+	
+
+
+	<!-- 	<script type="text/javascript">
+		// for  showing tableof this form // from table
+
+		$(document).ready(function() {
+			$('#tbl').DataTable(); //links to <table id="tbl"> in this header.html
+		});
+	</script> -->
+
+</body>
+</html>
